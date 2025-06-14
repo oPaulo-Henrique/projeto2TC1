@@ -32,7 +32,17 @@ public class CadastroTest {
         cadastroPage.preencherTelefone("(11) 98765-4321");
         cadastroPage.clicarCadastrar();
 
-        assertTrue(cadastroPage.obterMensagemSucesso().contains("sucesso"));
+        assertTrue(cadastroPage.obterMensagemSucesso().contains("Contato salvo com sucesso!"));
+    }
+
+    @Test
+    public void testCadastrarComDadosinválidos() {
+        cadastroPage.preencherNome("José da Silva");
+        cadastroPage.preencherEmail("jose@123456.gh");
+        cadastroPage.preencherTelefone("(00) 98765-4321");
+        cadastroPage.clicarCadastrar();
+
+        assertTrue(cadastroPage.obterMensagemSucesso().contains("Contato salvo com sucesso!"));
     }
 
     @Test
