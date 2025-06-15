@@ -151,4 +151,5 @@ public class OpenPageTest {
         int contactsCountAfter = driver.findElements(By.cssSelector(".contact")).size();
         assertEquals(contactsCountBefore - 1, contactsCountAfter);
     }
+
 }
